@@ -206,6 +206,7 @@
     .contact-info p { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #3D4F63; line-height: 1.8; margin-bottom: 12px; }
     .contact-info a { color: #8B7355; text-decoration: none; border-bottom: 1px solid #C4A97D; }
     .contact-info strong { font-family: 'DM Sans', sans-serif; font-weight: 600; color: #1B2A3D; }
+    .contact-form form { display: contents; }
     .contact-form input, .contact-form textarea {
       width: 100%; padding: 14px 18px; border: 1px solid #D6D0C4; background: #FAFAF7;
       font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: #1B2A3D;
@@ -220,7 +221,7 @@
       transition: background 0.2s;
     }
     .contact-form button:hover { background: #253B52; }
-contact-form
+
     /* FOOTER */
     .footer {
       padding: 40px clamp(24px, 5vw, 80px);
@@ -603,19 +604,20 @@ contact-form
             I welcome inquiries related to consulting engagements, speaking invitations,
             academic collaborations, and institutional partnerships.
           </p>
-          <p><strong>Email:</strong> <a href="mailto:peter@ayadee.io">peter@ayadee.io</a></p>
+          <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#26564352435466475f47424343084f49"><span class="__cf_email__" data-cfemail="bcccd9c8d9cefcddc5ddd8d9d992d5d3">[email&#160;protected]</span></a></p>
           <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/peterjohnson" target="_blank" rel="noopener noreferrer">linkedin.com/in/peterjohnson</a></p>
           <p style="margin-top: 24px; font-size: 0.88rem; color: #6B7280;">
             Based in the United States, France, and Germany. Open to engagements worldwide.
           </p>
         </div>
         <div class="contact-form fade-in d2">
-          <form action="<form action="https://formspree.io/f/meerbvzp" method="POST">" method="POST">
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Email Address" />
-          <input type="text" placeholder="Subject" />
-          <textarea placeholder="Your Message"></textarea>
-         <button type="submit">Send Message</button></form>
+          <form action="https://formspree.io/f/meerbvzp" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Email Address" required />
+            <input type="text" name="subject" placeholder="Subject" />
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
       </div>
     </div>
@@ -626,7 +628,7 @@ contact-form
     &copy; 2026 Peter Edmund Johnson. All rights reserved.
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll-based nav highlighting and shadow
     function scrollTo(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -645,16 +647,4 @@ contact-form
     // Fade-in on scroll
     var observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(function(el) {
-      observer.observe(el);
-    });
-  </script>
-
-</body>
-</html>
+        if (entry.isIntersect
