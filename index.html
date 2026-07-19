@@ -1,1 +1,377 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research | Peter Edmund Johnson</title><meta name="description" content="Research agenda on AI governance, DAOs, cooperative economics, institutional money and strategic foresight."><link rel="icon" href="/favicon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles.css"></head><body><header class="site-header"><div class="container nav"><a class="brand" href="/index.html">Peter <span>Johnson</span></a><button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button><ul class="nav-links"><li><a href="/research/index.html">Research</a></li><li><a href="/publications/index.html">Publications</a></li><li><a href="/ideas.html">Ideas</a></li><li><a href="/teaching.html">Teaching</a></li><li><a href="/speaking.html">Speaking</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li></ul></div></header><main><section class="page-hero"><div class="container"><div class="breadcrumb">Home / Research</div><span class="eyebrow">Research agenda</span><h1>Institutions for an intelligent future</h1><p>My research examines how rules, incentives, identities and technologies distribute authority—and how institutions can remain legitimate, adaptive and resilient under accelerating change.</p></div></section><section class="section"><div class="container"><div class="grid-3"><a class="card" href="/research/ai-governance.html"><h3>AI Governance</h3><p>Human–machine authority, accountability, public legitimacy and institutional implementation.</p></a><a class="card" href="/research/dao-governance.html"><h3>DAO Governance</h3><p>Delegation, token concentration, participation, capture and resilience.</p></a><a class="card" href="/research/cooperative-governance.html"><h3>Cooperative Governance</h3><p>Democratic ownership, federated structures, member education and mutualized risk.</p></a><a class="card" href="/research/institutional-money.html"><h3>Institutional Money</h3><p>Stablecoins, DAO treasuries, cooperative finance and money as organizational architecture.</p></a><a class="card" href="/research/strategic-foresight.html"><h3>Strategic Foresight</h3><p>Scenarios, systems thinking and institutional imagination.</p></a><a class="card" href="/research/digital-economies.html"><h3>Digital Economies</h3><p>Policy, infrastructure, inclusion and institutional capacity.</p></a></div></div></section></main><footer><div class="container footer"><span>© <span data-year></span> Peter Edmund Johnson</span><span>Designing institutions for an intelligent future</span></div></footer><script src="/script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peter Edmund Johnson — Governance, AI & Strategic Foresight</title>
+  <meta name="description" content="Peter Edmund Johnson is a practitioner-scholar, former U.S. diplomat, digital economist and strategic foresight advisor working on AI governance, DAOs, cooperatives and the future of institutions." />
+  <meta name="theme-color" content="#0f2f2b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2f2b'/%3E%3Cpath d='M18 47 31.8 15 46 47h-7.4l-3-7.4H28L25 47Zm12.4-13h3l-1.5-4.2Z' fill='%23f2b66d'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --ink: #16302d;
+      --ink-soft: #4d6561;
+      --paper: #f4efe7;
+      --paper-2: #ebe3d7;
+      --forest: #0f2f2b;
+      --forest-2: #18463f;
+      --amber: #e7a755;
+      --amber-soft: #f2c98e;
+      --line: rgba(15,47,43,.17);
+      --white: #fffdf8;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    h1, h2, h3, .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.08;
+      margin-top: 0;
+    }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .76rem;
+      font-weight: 700;
+      color: var(--amber);
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(244,239,231,.90);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-size: 1.2rem; text-decoration: none; }
+    .brand span { color: var(--amber); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav-links a { text-decoration: none; font-size: .9rem; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--ink); }
+    .hero {
+      background:
+        radial-gradient(circle at 82% 16%, rgba(231,167,85,.20), transparent 27%),
+        linear-gradient(145deg, var(--forest), #0c2522 68%);
+      color: var(--white);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -180px;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      box-shadow: 0 0 0 70px rgba(255,255,255,.025), 0 0 0 140px rgba(255,255,255,.018);
+    }
+    .hero-grid {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 80px;
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 { font-size: clamp(3.2rem, 7vw, 7rem); letter-spacing: -.045em; margin-bottom: 24px; }
+    .hero h1 em { color: var(--amber-soft); font-style: normal; }
+    .hero p { color: rgba(255,255,255,.78); font-size: 1.17rem; max-width: 760px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 19px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .92rem;
+      border: 1px solid rgba(255,255,255,.24);
+    }
+    .button.primary { background: var(--amber); color: #1b2c29; border-color: var(--amber); }
+    .button.secondary { color: var(--white); }
+    .hero-note {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: 3px;
+    }
+    .hero-note blockquote { font-family: Georgia, serif; font-size: 1.45rem; line-height: 1.35; margin: 0 0 26px; }
+    .hero-note p { font-size: .9rem; margin: 0; }
+    section { padding: 110px 0; }
+    section.alt { background: var(--paper-2); }
+    .section-head {
+      display: grid;
+      grid-template-columns: .45fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .section-head h2 { font-size: clamp(2.4rem, 4.7vw, 4.6rem); margin-bottom: 0; }
+    .section-head p { color: var(--ink-soft); margin: 0; max-width: 720px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+    .about-grid p:first-child { font-size: 1.3rem; }
+    .fact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .fact { border-top: 1px solid var(--line); padding-top: 16px; }
+    .fact strong { display: block; font-family: Georgia, serif; font-size: 2.2rem; color: var(--forest); }
+    .fact span { color: var(--ink-soft); font-size: .9rem; }
+    .themes { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .theme { background: var(--paper); padding: 30px 24px; min-height: 220px; }
+    .theme .num { color: var(--amber); font-weight: 700; font-size: .8rem; letter-spacing: .12em; }
+    .theme h3 { font-size: 1.55rem; margin: 48px 0 13px; }
+    .theme p { color: var(--ink-soft); font-size: .92rem; }
+    .research-feature {
+      background: var(--forest);
+      color: var(--white);
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      margin-bottom: 26px;
+    }
+    .research-feature h3 { font-size: clamp(2rem, 4vw, 4rem); margin-bottom: 22px; }
+    .research-feature p { color: rgba(255,255,255,.76); }
+    .research-feature aside { border-left: 1px solid rgba(255,255,255,.18); padding-left: 36px; }
+    .research-feature aside strong { display:block; color: var(--amber-soft); margin-bottom: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .card { background: var(--white); border: 1px solid var(--line); padding: 30px; display: flex; flex-direction: column; min-height: 350px; }
+    .card .status { color: var(--amber); font-weight: 700; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
+    .card h3 { font-size: 1.65rem; margin: 22px 0 16px; }
+    .card p { color: var(--ink-soft); font-size: .94rem; }
+    .card footer { margin-top: auto; padding-top: 28px; font-size: .85rem; color: var(--ink-soft); border-top: 1px solid var(--line); }
+    .timeline { border-left: 1px solid var(--line); margin-left: 12px; }
+    .timeline-item { position: relative; padding: 0 0 42px 38px; display: grid; grid-template-columns: 180px 1fr; gap: 24px; }
+    .timeline-item::before { content:""; position:absolute; width:11px; height:11px; border-radius:50%; background:var(--amber); left:-6px; top:7px; }
+    .timeline-item time { font-weight:700; color:var(--forest); }
+    .timeline-item h3 { margin-bottom: 8px; font-size: 1.45rem; }
+    .timeline-item p { margin:0; color:var(--ink-soft); }
+    .pub-list { border-top: 1px solid var(--line); }
+    .pub { display:grid; grid-template-columns: 120px 1fr auto; gap: 28px; padding: 27px 0; border-bottom: 1px solid var(--line); align-items:start; }
+    .pub time { font-weight:700; color:var(--amber); }
+    .pub h3 { font-family: Georgia, serif; font-size:1.35rem; margin:0 0 7px; }
+    .pub p { margin:0; color:var(--ink-soft); font-size:.93rem; }
+    .pub .tag { white-space:nowrap; font-size:.78rem; padding:5px 10px; border:1px solid var(--line); border-radius:999px; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .work-item { padding:28px 0; border-top:2px solid var(--forest); }
+    .work-item h3 { font-size:1.55rem; }
+    .work-item p { color:var(--ink-soft); }
+    .contact { background: var(--amber); color:#18312d; }
+    .contact-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:80px; align-items:end; }
+    .contact h2 { font-size:clamp(3rem,6vw,6rem); margin-bottom:20px; }
+    .contact a { font-weight:700; }
+    .contact-box { border-left:1px solid rgba(24,49,45,.35); padding-left:34px; }
+    .site-footer { background:#0a211e; color:rgba(255,255,255,.65); padding:28px 0; font-size:.83rem; }
+    .site-footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media (max-width: 920px) {
+      .hero-grid, .section-head, .about-grid, .research-feature, .contact-grid { grid-template-columns:1fr; }
+      .hero-grid { min-height:auto; gap:45px; }
+      .themes { grid-template-columns:repeat(2,1fr); }
+      .cards, .work-grid { grid-template-columns:1fr; }
+      .research-feature aside { border-left:0; border-top:1px solid rgba(255,255,255,.18); padding:28px 0 0; }
+      .timeline-item { grid-template-columns:1fr; gap:6px; }
+    }
+    @media (max-width: 650px) {
+      .nav-inner { align-items:flex-start; padding:17px 0; }
+      .nav-links { display:none; }
+      .hero-grid { padding:70px 0; }
+      section { padding:78px 0; }
+      .themes { grid-template-columns:1fr; }
+      .research-feature { padding:32px 24px; }
+      .pub { grid-template-columns:1fr; gap:8px; }
+      .pub .tag { justify-self:start; }
+      .fact-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Peter Edmund <span>Johnson</span></a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#agenda">Agenda</a><a href="#publications">Publications</a><a href="#work">Work</a><a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Governance · AI · Digital Economy · Foresight</div>
+        <h1>Designing institutions for an <em>uncertain future.</em></h1>
+        <p>I am a practitioner-scholar, digital economist, former U.S. diplomat and strategic foresight advisor working at the intersection of artificial intelligence, decentralized governance, financial institutions and institutional transformation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#research">Explore the research</a>
+          <a class="button secondary" href="#contact">Discuss a collaboration</a>
+        </div>
+      </div>
+      <aside class="hero-note">
+        <blockquote>Technology does not determine governance outcomes. Institutional design does.</blockquote>
+        <p>Current doctoral research compares financial cooperatives and decentralized autonomous organizations to understand how democratic institutions distribute the cost of trust, participation and risk.</p>
+      </aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">About</div><h2>Scholarship shaped by practice.</h2></div>
+          <p>My work connects academic research with the institutional realities faced by governments, financial systems, international organizations, firms and emerging digital communities.</p>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>Across more than fifteen years, I have worked in diplomacy, international development, finance, higher education and entrepreneurship. I translate emerging technological change into governance choices that leaders can understand and act upon.</p>
+            <p>I am pursuing a PhD in Business, Innovation and Knowledge Management at the University of the Basque Country. My research examines democratic governance at scale, with particular attention to DAOs, financial cooperatives, institutional money and the future of AI-enabled organizations.</p>
+          </div>
+          <div class="fact-grid">
+            <div class="fact"><strong>40+</strong><span>countries of professional engagement</span></div>
+            <div class="fact"><strong>800+</strong><span>university students taught and mentored</span></div>
+            <div class="fact"><strong>$2B+</strong><span>mobilized through a 72-country coalition</span></div>
+            <div class="fact"><strong>5</strong><span>intersecting fields of current inquiry</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Research domains</div><h2>One question, several institutional frontiers.</h2></div>
+          <p>How can societies build institutions that remain legitimate, adaptive and resilient when technology changes faster than governance?</p>
+        </div>
+        <div class="themes">
+          <article class="theme"><div class="num">01</div><h3>AI governance</h3><p>Institutional frameworks for responsible AI adoption, oversight, knowledge systems and agentic organizations.</p></article>
+          <article class="theme"><div class="num">02</div><h3>DAOs</h3><p>Voting, delegation, token concentration, organizational money and the institutional limits of code-based governance.</p></article>
+          <article class="theme"><div class="num">03</div><h3>Cooperatives</h3><p>Member participation, federated structures, mutual liability and democratic control in financial institutions.</p></article>
+          <article class="theme"><div class="num">04</div><h3>Future of money</h3><p>How organizations create monetary systems that combine governance rights, incentives, liquidity and institutional identity.</p></article>
+          <article class="theme"><div class="num">05</div><h3>Strategic foresight</h3><p>Scenario development and institutional design for governments, boards and organizations navigating structural uncertainty.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Current research</div><h2>Democratic governance at scale.</h2></div>
+          <p>A comparative institutional analysis of financial cooperatives and decentralized autonomous organizations.</p>
+        </div>
+        <article class="research-feature">
+          <div>
+            <div class="eyebrow">Doctoral research</div>
+            <h3>The governance-risk premium</h3>
+            <p>The project compares how two democratic organizational families distribute the cost of trust. Cooperatives incur recurring costs through member education, deliberation and participation infrastructure. DAOs appear to concentrate governance costs in lower participation, concentrated voting power and occasional severe failures.</p>
+            <p>The central proposition is not that one form is inherently superior, but that governance outcomes emerge from institutional architecture rather than technological substrate alone.</p>
+          </div>
+          <aside>
+            <strong>Anchor cases</strong><p>SICOOB UniMais Mantiqueira and MakerDAO/Sky.</p>
+            <strong>Extension cases</strong><p>OP and POP Bank Groups, Rabobank, Mondragon finance, Aave, Compound and Uniswap.</p>
+            <strong>Methods</strong><p>Interviews, institutional documents, supervisory data, financial stability indicators, on-chain voting histories and governance-forum analysis.</p>
+          </aside>
+        </article>
+        <div class="cards">
+          <article class="card">
+            <div class="status">Working paper · 2026</div>
+            <h3>Ratification Democracy at Scale</h3>
+            <p>Evidence from a Brazilian financial cooperative on digital assemblies, member participation, bounded delegation and the ambiguity between effective alignment and weak contestation.</p>
+            <footer>SICOOB UniMais Mantiqueira · Brazilian fieldwork</footer>
+          </article>
+          <article class="card">
+            <div class="status">Planned paper · Spring 2027</div>
+            <h3>Forking the Cooperative</h3>
+            <p>The OP and POP separations in Finnish cooperative banking as an institutional analogue to blockchain hard forks, focusing on joint liability, institutional exit and capital strength.</p>
+            <footer>Finnish cooperative banking · OP/POP comparison</footer>
+          </article>
+          <article class="card">
+            <div class="status">Submitted · In review</div>
+            <h3>Organizational Money</h3>
+            <p>How Compound, Uniswap and MakerDAO create hybrid governance-monetary systems in which money simultaneously allocates value, coordinates participation and distributes authority.</p>
+            <footer>Book chapter · The Future of Money · Springer Nature</footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="agenda">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Research agenda</div><h2>Work underway and ahead.</h2></div>
+          <p>The research program is sequenced to preserve field evidence first, then build the comparative on-chain and financial datasets needed for the broader institutional argument.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item"><time>Sep–Dec 2026</time><div><h3>Brazilian cooperative governance</h3><p>Complete the Mantiqueira empirical paper and build the financial stability panel for Brazilian and Finnish cooperative cases.</p></div></article>
+          <article class="timeline-item"><time>Jan–Apr 2027</time><div><h3>DAO governance and Finnish fieldwork</h3><p>Assemble token concentration, voting and forum-deliberation data while preparing interviews and archival research on the OP and POP banking groups.</p></div></article>
+          <article class="timeline-item"><time>Spring 2027</time><div><h3>Forking the Cooperative</h3><p>Develop the planned paper on institutional exit, joint liability, the price of independence and the role of regulatory cushioning in organizational forks.</p></div></article>
+          <article class="timeline-item"><time>May–Aug 2027</time><div><h3>Comparative synthesis</h3><p>Integrate cooperative and DAO evidence through the governance-risk premium, with further analysis of Rabobank and Mondragon financial institutions.</p></div></article>
+          <article class="timeline-item"><time>Late 2027</time><div><h3>AI-agent organizations</h3><p>Assess whether AI-agent organizations constitute a third institutional paradigm and how lessons from cooperatives and DAOs might inform their governance.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected publications</div><h2>Research across governance and digital transformation.</h2></div>
+          <p>Selected academic and practitioner work connecting technological change, institutional design and development strategy.</p>
+        </div>
+        <div class="pub-list">
+          <article class="pub"><time>2026</time><div><h3>Organizational Money: How DAOs Create Hybrid Governance-Monetary Systems</h3><p>Forthcoming book chapter in <em>The Future of Money</em>, Springer Nature.</p></div><span class="tag">In review</span></article>
+          <article class="pub"><time>2024</time><div><h3>Madagascar 2044: A Visionary Model for Governance</h3><p>Institute for Security Studies and AUDA-NEPAD.</p></div><span class="tag">Foresight</span></article>
+          <article class="pub"><time>2023</time><div><h3>Digital Ecosystem Country Assessment — El Salvador</h3><p>USAID Digital Frontiers / DAI.</p></div><span class="tag">Digital economy</span></article>
+          <article class="pub"><time>2022</time><div><h3>EU PSD2 as Catalyst for FinTech and MSME Access to Finance</h3><p>EU Neighbours South / GOPA.</p></div><span class="tag">FinTech</span></article>
+          <article class="pub"><time>2020</time><div><h3>Blockchain and Philanthropy</h3><p>Global Philanthropy Tracker, Indiana University.</p></div><span class="tag">Blockchain</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Professional work</div><h2>From ideas to institutional decisions.</h2></div>
+          <p>I advise organizations operating where technological possibility, political economy and institutional capacity meet.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-item"><h3>AI strategy and governance</h3><p>Responsible AI frameworks, institutional workflows, knowledge management, change leadership and executive decision systems.</p></article>
+          <article class="work-item"><h3>Digital economy and finance</h3><p>Digital ecosystem assessments, FinTech, open banking, digital identity, financial inclusion and emerging-market strategy.</p></article>
+          <article class="work-item"><h3>Strategic foresight</h3><p>Scenarios, institutional futures, geopolitical risk and long-range strategy for boards, governments and international organizations.</p></article>
+          <article class="work-item"><h3>Governance design</h3><p>Institutional architecture for democratic participation, delegation, accountability and cross-organizational coordination.</p></article>
+          <article class="work-item"><h3>Executive education</h3><p>Teaching and facilitated learning on AI, entrepreneurship, innovation, governance and technological transformation.</p></article>
+          <article class="work-item"><h3>Research partnerships</h3><p>Applied research, comparative case studies, interviews, data synthesis and translation between academic and practitioner communities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div><div class="eyebrow" style="color:#18312d">Contact</div><h2>Let’s build institutions fit for the future.</h2><p>Available for research collaborations, advisory work, executive education, speaking and institutional strategy engagements.</p></div>
+        <div class="contact-box"><p><strong>Email</strong><br><a href="mailto:peter@ayadee.io">peter@ayadee.io</a></p><p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/peterjohnson" target="_blank" rel="noopener">linkedin.com/in/peterjohnson</a></p><p><strong>Affiliation</strong><br>University of the Basque Country (UPV/EHU)</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><span>© <span id="year"></span> Peter Edmund Johnson</span><span>Research · Advisory · Foresight</span></div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
