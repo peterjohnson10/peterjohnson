@@ -3,648 +3,375 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peter Edmund Johnson — AI Governance, Digital Economy, Strategic Foresight</title>
-  <meta name="description" content="Peter Edmund Johnson is an international development specialist, former U.S. diplomat, and practitioner-scholar working at the intersection of AI governance, digital economy strategy, and multilateral policy." />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231B2A3D'/><text x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='16' font-weight='600' fill='%23C4A97D'>PJ</text></svg>" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <title>Peter Edmund Johnson — Governance, AI & Strategic Foresight</title>
+  <meta name="description" content="Peter Edmund Johnson is a practitioner-scholar, former U.S. diplomat, digital economist and strategic foresight advisor working on AI governance, DAOs, cooperatives and the future of institutions." />
+  <meta name="theme-color" content="#0f2f2b" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f2f2b'/%3E%3Cpath d='M18 47 31.8 15 46 47h-7.4l-3-7.4H28L25 47Zm12.4-13h3l-1.5-4.2Z' fill='%23f2b66d'/%3E%3C/svg%3E" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { font-family: 'Cormorant Garamond', Georgia, serif; background: #FAFAF7; color: #1B2A3D; overflow-x: hidden; }
-    ::selection { background: #1B2A3D; color: #F5F0E8; }
-
-    /* FADE IN ANIMATION */
-    .fade-in {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+    :root {
+      --ink: #16302d;
+      --ink-soft: #4d6561;
+      --paper: #f4efe7;
+      --paper-2: #ebe3d7;
+      --forest: #0f2f2b;
+      --forest-2: #18463f;
+      --amber: #e7a755;
+      --amber-soft: #f2c98e;
+      --line: rgba(15,47,43,.17);
+      --white: #fffdf8;
+      --max: 1180px;
     }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-    .fade-in.d1 { transition-delay: 0.1s; }
-    .fade-in.d2 { transition-delay: 0.2s; }
-    .fade-in.d3 { transition-delay: 0.3s; }
-
-    /* NAV */
-    .nav-bar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 clamp(24px, 5vw, 80px); height: 72px;
-      background: rgba(250,250,247,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, box-shadow 0.3s;
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
     }
-    .nav-bar.scrolled { border-bottom-color: #D6D0C4; box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
-    .nav-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; letter-spacing: 0.04em; color: #1B2A3D; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links li {
-      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
-      color: #6B7280; transition: color 0.2s;
+    a { color: inherit; }
+    h1, h2, h3, .brand {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.08;
+      margin-top: 0;
     }
-    .nav-links li:hover, .nav-links li.active { color: #1B2A3D; }
-    .nav-links li.active { border-bottom: 2px solid #8B7355; padding-bottom: 2px; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: #1B2A3D; margin: 5px 0; transition: 0.3s; }
-    @media (max-width: 860px) {
-      .nav-links { display: none; }
-      .nav-links.open {
-        display: flex; flex-direction: column; position: absolute; top: 72px; left: 0; right: 0;
-        background: rgba(250,250,247,0.98); backdrop-filter: blur(12px);
-        padding: 24px clamp(24px, 5vw, 80px); gap: 18px; border-bottom: 1px solid #D6D0C4;
-      }
-      .hamburger { display: block; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .76rem;
+      font-weight: 700;
+      color: var(--amber);
     }
-
-    /* HERO */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(244,239,231,.90);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-size: 1.2rem; text-decoration: none; }
+    .brand span { color: var(--amber); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav-links a { text-decoration: none; font-size: .9rem; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--ink); }
     .hero {
-      min-height: 92vh; display: flex; align-items: center; justify-content: center;
-      padding: 120px clamp(24px, 5vw, 80px) 80px;
-      background: linear-gradient(168deg, #1B2A3D 0%, #253B52 48%, #2C4460 100%);
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -40%; right: -20%; width: 800px; height: 800px;
-      background: radial-gradient(circle, rgba(139,115,85,0.12) 0%, transparent 70%);
+      background:
+        radial-gradient(circle at 82% 16%, rgba(231,167,85,.20), transparent 27%),
+        linear-gradient(145deg, var(--forest), #0c2522 68%);
+      color: var(--white);
+      overflow: hidden;
+      position: relative;
     }
     .hero::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 120px;
-      background: linear-gradient(to top, #FAFAF7, transparent);
+      content: "";
+      position: absolute;
+      right: -110px;
+      bottom: -180px;
+      width: 560px;
+      height: 560px;
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: 50%;
+      box-shadow: 0 0 0 70px rgba(255,255,255,.025), 0 0 0 140px rgba(255,255,255,.018);
     }
-    .hero-inner { max-width: 900px; text-align: center; position: relative; z-index: 1; }
-    .hero-label {
-      font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.18em; text-transform: uppercase; color: #C4A97D;
-      margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s 0.3s forwards;
+    .hero-grid {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      align-items: center;
+      gap: 80px;
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
     }
-    .hero-name {
-      font-size: clamp(2.6rem, 5.5vw, 4.2rem); font-weight: 700; color: #F5F0E8;
-      line-height: 1.12; letter-spacing: 0.01em; margin-bottom: 24px;
-      opacity: 0; animation: fadeUp 0.8s 0.5s forwards;
+    .hero h1 { font-size: clamp(3.2rem, 7vw, 7rem); letter-spacing: -.045em; margin-bottom: 24px; }
+    .hero h1 em { color: var(--amber-soft); font-style: normal; }
+    .hero p { color: rgba(255,255,255,.78); font-size: 1.17rem; max-width: 760px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 19px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .92rem;
+      border: 1px solid rgba(255,255,255,.24);
     }
-    .hero-sub {
-      font-family: 'DM Sans', sans-serif; font-size: clamp(1rem, 1.8vw, 1.15rem);
-      color: #B0BEC5; line-height: 1.7; max-width: 680px; margin: 0 auto 36px;
-      opacity: 0; animation: fadeUp 0.8s 0.7s forwards;
+    .button.primary { background: var(--amber); color: #1b2c29; border-color: var(--amber); }
+    .button.secondary { color: var(--white); }
+    .hero-note {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      border-radius: 3px;
     }
-    .hero-tags {
-      display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
-      opacity: 0; animation: fadeUp 0.8s 0.9s forwards;
+    .hero-note blockquote { font-family: Georgia, serif; font-size: 1.45rem; line-height: 1.35; margin: 0 0 26px; }
+    .hero-note p { font-size: .9rem; margin: 0; }
+    section { padding: 110px 0; }
+    section.alt { background: var(--paper-2); }
+    .section-head {
+      display: grid;
+      grid-template-columns: .45fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 56px;
     }
-    .hero-tag {
-      font-family: 'DM Sans', sans-serif; font-size: 0.75rem; font-weight: 500;
-      letter-spacing: 0.05em; padding: 7px 16px; border: 1px solid rgba(196,169,125,0.35);
-      color: #C4A97D; border-radius: 2px;
+    .section-head h2 { font-size: clamp(2.4rem, 4.7vw, 4.6rem); margin-bottom: 0; }
+    .section-head p { color: var(--ink-soft); margin: 0; max-width: 720px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; }
+    .about-grid p:first-child { font-size: 1.3rem; }
+    .fact-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+    .fact { border-top: 1px solid var(--line); padding-top: 16px; }
+    .fact strong { display: block; font-family: Georgia, serif; font-size: 2.2rem; color: var(--forest); }
+    .fact span { color: var(--ink-soft); font-size: .9rem; }
+    .themes { display: grid; grid-template-columns: repeat(5,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .theme { background: var(--paper); padding: 30px 24px; min-height: 220px; }
+    .theme .num { color: var(--amber); font-weight: 700; font-size: .8rem; letter-spacing: .12em; }
+    .theme h3 { font-size: 1.55rem; margin: 48px 0 13px; }
+    .theme p { color: var(--ink-soft); font-size: .92rem; }
+    .research-feature {
+      background: var(--forest);
+      color: var(--white);
+      padding: 56px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      margin-bottom: 26px;
     }
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+    .research-feature h3 { font-size: clamp(2rem, 4vw, 4rem); margin-bottom: 22px; }
+    .research-feature p { color: rgba(255,255,255,.76); }
+    .research-feature aside { border-left: 1px solid rgba(255,255,255,.18); padding-left: 36px; }
+    .research-feature aside strong { display:block; color: var(--amber-soft); margin-bottom: 8px; }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    .card { background: var(--white); border: 1px solid var(--line); padding: 30px; display: flex; flex-direction: column; min-height: 350px; }
+    .card .status { color: var(--amber); font-weight: 700; font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; }
+    .card h3 { font-size: 1.65rem; margin: 22px 0 16px; }
+    .card p { color: var(--ink-soft); font-size: .94rem; }
+    .card footer { margin-top: auto; padding-top: 28px; font-size: .85rem; color: var(--ink-soft); border-top: 1px solid var(--line); }
+    .timeline { border-left: 1px solid var(--line); margin-left: 12px; }
+    .timeline-item { position: relative; padding: 0 0 42px 38px; display: grid; grid-template-columns: 180px 1fr; gap: 24px; }
+    .timeline-item::before { content:""; position:absolute; width:11px; height:11px; border-radius:50%; background:var(--amber); left:-6px; top:7px; }
+    .timeline-item time { font-weight:700; color:var(--forest); }
+    .timeline-item h3 { margin-bottom: 8px; font-size: 1.45rem; }
+    .timeline-item p { margin:0; color:var(--ink-soft); }
+    .pub-list { border-top: 1px solid var(--line); }
+    .pub { display:grid; grid-template-columns: 120px 1fr auto; gap: 28px; padding: 27px 0; border-bottom: 1px solid var(--line); align-items:start; }
+    .pub time { font-weight:700; color:var(--amber); }
+    .pub h3 { font-family: Georgia, serif; font-size:1.35rem; margin:0 0 7px; }
+    .pub p { margin:0; color:var(--ink-soft); font-size:.93rem; }
+    .pub .tag { white-space:nowrap; font-size:.78rem; padding:5px 10px; border:1px solid var(--line); border-radius:999px; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .work-item { padding:28px 0; border-top:2px solid var(--forest); }
+    .work-item h3 { font-size:1.55rem; }
+    .work-item p { color:var(--ink-soft); }
+    .contact { background: var(--amber); color:#18312d; }
+    .contact-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:80px; align-items:end; }
+    .contact h2 { font-size:clamp(3rem,6vw,6rem); margin-bottom:20px; }
+    .contact a { font-weight:700; }
+    .contact-box { border-left:1px solid rgba(24,49,45,.35); padding-left:34px; }
+    .site-footer { background:#0a211e; color:rgba(255,255,255,.65); padding:28px 0; font-size:.83rem; }
+    .site-footer .wrap { display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+    @media (max-width: 920px) {
+      .hero-grid, .section-head, .about-grid, .research-feature, .contact-grid { grid-template-columns:1fr; }
+      .hero-grid { min-height:auto; gap:45px; }
+      .themes { grid-template-columns:repeat(2,1fr); }
+      .cards, .work-grid { grid-template-columns:1fr; }
+      .research-feature aside { border-left:0; border-top:1px solid rgba(255,255,255,.18); padding:28px 0 0; }
+      .timeline-item { grid-template-columns:1fr; gap:6px; }
     }
-
-    /* SECTIONS */
-    .section { padding: 100px clamp(24px, 5vw, 80px); }
-    .section-inner { max-width: 1060px; margin: 0 auto; }
-    .section-label {
-      font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: #8B7355; margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 600; color: #1B2A3D;
-      line-height: 1.2; margin-bottom: 40px;
-    }
-    .section-divider { width: 48px; height: 2px; background: #C4A97D; margin-bottom: 48px; }
-
-    /* ABOUT */
-    .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    @media (max-width: 768px) { .bio-grid { grid-template-columns: 1fr; gap: 36px; } }
-    .bio-text { font-family: 'DM Sans', sans-serif; font-size: 0.98rem; line-height: 1.85; color: #3D4F63; }
-    .bio-text p { margin-bottom: 20px; }
-    .bio-sidebar { padding: 36px; background: #F0EDE6; border-left: 3px solid #C4A97D; }
-    .bio-sidebar h4 {
-      font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; color: #8B7355; margin-bottom: 16px;
-    }
-    .bio-sidebar ul { list-style: none; }
-    .bio-sidebar li {
-      font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: #3D4F63;
-      padding: 8px 0; border-bottom: 1px solid #DDD8CE;
-    }
-    .bio-sidebar li:last-child { border-bottom: none; }
-    .sidebar-block + .sidebar-block { margin-top: 28px; }
-
-    /* EXPERTISE */
-    .expertise-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 32px; }
-    .expertise-card {
-      padding: 36px; background: #fff; border: 1px solid #E8E3D9;
-      transition: box-shadow 0.3s, transform 0.3s;
-    }
-    .expertise-card:hover { box-shadow: 0 8px 32px rgba(27,42,61,0.07); transform: translateY(-3px); }
-    .expertise-icon { font-size: 1.4rem; color: #8B7355; margin-bottom: 16px; display: block; }
-    .expertise-card h3 { font-size: 1.15rem; font-weight: 600; color: #1B2A3D; margin-bottom: 12px; }
-    .expertise-card p { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; line-height: 1.7; color: #5A6B7D; }
-
-    /* PUBLICATIONS */
-    .pub-item {
-      display: grid; grid-template-columns: 64px 1fr; gap: 24px;
-      padding: 28px 0; border-bottom: 1px solid #E8E3D9;
-      transition: background 0.2s;
-    }
-    .pub-item:hover { background: rgba(139,115,85,0.03); }
-    .pub-year {
-      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 600;
-      color: #8B7355; padding-top: 4px;
-    }
-    .pub-title { font-size: 1.08rem; font-weight: 600; color: #1B2A3D; margin-bottom: 6px; line-height: 1.4; }
-    .pub-venue { font-family: 'DM Sans', sans-serif; font-size: 0.85rem; color: #6B7280; line-height: 1.5; }
-    .pub-badge {
-      display: inline-block; font-family: 'DM Sans', sans-serif; font-size: 0.68rem;
-      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-      padding: 3px 8px; border-radius: 2px; margin-top: 6px;
-      background: #F0EDE6; color: #8B7355;
-    }
-
-    /* SPEAKING */
-    .speaking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    @media (max-width: 768px) { .speaking-grid { grid-template-columns: 1fr; } }
-    .speaking-card { padding: 28px 32px; background: #fff; border: 1px solid #E8E3D9; }
-    .speaking-card h4 { font-size: 1.05rem; font-weight: 600; color: #1B2A3D; margin-bottom: 8px; }
-    .speaking-card p { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: #5A6B7D; line-height: 1.65; }
-
-    /* ADVISORY */
-    .advisory-section { background: #1B2A3D; color: #F5F0E8; }
-    .advisory-section .section-label { color: #C4A97D; }
-    .advisory-section .section-title { color: #F5F0E8; }
-    .advisory-section .section-divider { background: #C4A97D; }
-    .adv-text { font-family: 'DM Sans', sans-serif; font-size: 1.02rem; line-height: 1.85; color: #B0BEC5; max-width: 720px; margin-bottom: 40px; }
-    .adv-text p { margin-bottom: 18px; }
-    .adv-domains { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
-    .adv-domain {
-      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
-      padding: 9px 20px; border: 1px solid rgba(196,169,125,0.3); color: #C4A97D;
-    }
-    .adv-clients h4 {
-      font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; color: #C4A97D; margin-bottom: 20px;
-    }
-    .adv-client-grid { display: flex; flex-wrap: wrap; gap: 16px 32px; }
-    .adv-client-grid span { font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: #8899AA; }
-
-    /* ACADEMIC */
-    .academic-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
-    @media (max-width: 768px) { .academic-grid { grid-template-columns: 1fr; } }
-    .academic-col h4 {
-      font-family: 'DM Sans', sans-serif; font-size: 0.72rem; font-weight: 600;
-      letter-spacing: 0.16em; text-transform: uppercase; color: #8B7355; margin-bottom: 20px;
-    }
-    .academic-item { margin-bottom: 24px; }
-    .academic-item h5 { font-size: 1.02rem; font-weight: 600; color: #1B2A3D; margin-bottom: 4px; }
-    .academic-item p { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: #5A6B7D; line-height: 1.6; }
-    .academic-item .meta { font-size: 0.8rem; color: #8B7355; margin-top: 2px; }
-
-    /* CONTACT */
-    .contact-section { background: #F0EDE6; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; gap: 36px; } }
-    .contact-info p { font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: #3D4F63; line-height: 1.8; margin-bottom: 12px; }
-    .contact-info a { color: #8B7355; text-decoration: none; border-bottom: 1px solid #C4A97D; }
-    .contact-info strong { font-family: 'DM Sans', sans-serif; font-weight: 600; color: #1B2A3D; }
-    .contact-form form { display: contents; }
-    .contact-form input, .contact-form textarea {
-      width: 100%; padding: 14px 18px; border: 1px solid #D6D0C4; background: #FAFAF7;
-      font-family: 'DM Sans', sans-serif; font-size: 0.92rem; color: #1B2A3D;
-      margin-bottom: 16px; outline: none; transition: border-color 0.2s;
-    }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: #8B7355; }
-    .contact-form textarea { min-height: 120px; resize: vertical; }
-    .contact-form button {
-      font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase; padding: 14px 36px;
-      background: #1B2A3D; color: #F5F0E8; border: none; cursor: pointer;
-      transition: background 0.2s;
-    }
-    .contact-form button:hover { background: #253B52; }
-
-    /* FOOTER */
-    .footer {
-      padding: 40px clamp(24px, 5vw, 80px);
-      background: #1B2A3D; text-align: center;
-      font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: #5A6B7D;
+    @media (max-width: 650px) {
+      .nav-inner { align-items:flex-start; padding:17px 0; }
+      .nav-links { display:none; }
+      .hero-grid { padding:70px 0; }
+      section { padding:78px 0; }
+      .themes { grid-template-columns:1fr; }
+      .research-feature { padding:32px 24px; }
+      .pub { grid-template-columns:1fr; gap:8px; }
+      .pub .tag { justify-self:start; }
+      .fact-grid { grid-template-columns:1fr; }
     }
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav class="nav-bar" id="navbar">
-    <span class="nav-name">Peter Edmund Johnson</span>
-    <button class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <ul class="nav-links">
-      <li onclick="scrollTo('about')">About</li>
-      <li onclick="scrollTo('expertise')">Expertise</li>
-      <li onclick="scrollTo('publications')">Publications</li>
-      <li onclick="scrollTo('speaking')">Speaking</li>
-      <li onclick="scrollTo('advisory')">Advisory</li>
-      <li onclick="scrollTo('academic')">Academic</li>
-      <li onclick="scrollTo('contact')">Contact</li>
-    </ul>
+  <nav>
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Peter Edmund <span>Johnson</span></a>
+      <div class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a><a href="#research">Research</a><a href="#agenda">Agenda</a><a href="#publications">Publications</a><a href="#work">Work</a><a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-label">AI Governance · Digital Economy · Strategic Foresight</div>
-      <h1 class="hero-name">Peter Edmund Johnson</h1>
-      <p class="hero-sub">
-        International development specialist, former U.S. diplomat, and practitioner-scholar
-        working at the intersection of AI governance, digital economy strategy, and multilateral
-        policy across 40+ countries.
-      </p>
-      <div class="hero-tags">
-        <span class="hero-tag">Finance Fellow, Scale AI</span>
-        <span class="hero-tag">PhD Candidate, Univ. of the Basque Country</span>
-        <span class="hero-tag">Former U.S. Foreign Service Officer</span>
-        <span class="hero-tag">Johns Hopkins SAIS</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="section" id="about">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">About</div>
-        <h2 class="section-title">Building Bridges Between<br/>Technology, Policy, and Impact</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="bio-grid">
-        <div class="bio-text fade-in d1">
-          <p>
-            For more than fifteen years, I have worked to make emerging technologies serve the public interest.
-            My career began in finance at S&amp;P Global and the African Development Bank, shifted into frontline
-            diplomacy as a U.S. Foreign Service Officer with Top Secret clearance, and has since evolved into a
-            practice centered on advising multilateral institutions on how to govern, deploy, and benefit from
-            AI, FinTech, and digital infrastructure.
-          </p>
-          <p>
-            I have led digital economy assessments for USAID in El Salvador, directed open banking reform
-            initiatives for the European Union across the Southern Mediterranean, designed governance programs
-            for senior officials with UNDP in Madagascar, and developed AI integration strategies for DAI.
-            My current research, conducted through a PhD at the University of the Basque Country, examines
-            how decentralized organizations reshape governance and business models.
-          </p>
-          <p>
-            What distinguishes my approach is the combination of institutional credibility, field-level execution,
-            and cross-sector fluency. I operate comfortably in a cabinet minister's office, a blockchain lab,
-            or a university lecture hall, and I bring that versatility to every engagement.
-          </p>
-        </div>
-        <div class="fade-in d2">
-          <div class="bio-sidebar">
-            <div class="sidebar-block">
-              <h4>Affiliations</h4>
-              <ul>
-                <li>Finance Fellow, Human Frontier Collective at Scale AI</li>
-                <li>Bretton Woods Committee — AI and FinTech Working Groups</li>
-                <li>YPO Social Impact Network — Executive Committee</li>
-                <li>BMW Foundation Responsible Leaders Network</li>
-                <li>Lifeboat Foundation — Advisory Board, AI Ethics &amp; Policy Futures</li>
-                <li>Association of Professional Futurists</li>
-              </ul>
-            </div>
-            <div class="sidebar-block">
-              <h4>Languages</h4>
-              <ul>
-                <li>English (Native)</li>
-                <li>Spanish (C2 / Fluent)</li>
-                <li>German (B2)</li>
-                <li>French (B1)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERTISE -->
-  <section class="section" id="expertise" style="background: #F5F2EB;">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">Expertise</div>
-        <h2 class="section-title">Domains of Practice</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="expertise-grid">
-        <div class="expertise-card fade-in">
-          <span class="expertise-icon">&#9670;</span>
-          <h3>AI Governance &amp; Ethics</h3>
-          <p>Designing responsible AI frameworks for multilateral institutions. Author of institutional guidance on risk classification, procurement, and deployment in development contexts.</p>
-        </div>
-        <div class="expertise-card fade-in">
-          <span class="expertise-icon">&#9671;</span>
-          <h3>Digital Economy Strategy</h3>
-          <p>Led ecosystem assessments and policy design for USAID, the European Commission, and UNDP across 40+ countries spanning Africa, MENA, Latin America, and Eastern Europe.</p>
-        </div>
-        <div class="expertise-card fade-in">
-          <span class="expertise-icon">&#9635;</span>
-          <h3>FinTech &amp; Open Banking</h3>
-          <p>Directed PSD2-style open banking roadmaps for the Southern Mediterranean. Advised regulators and financial institutions on sequencing reforms and data-sharing standards.</p>
-        </div>
-        <div class="expertise-card fade-in">
-          <span class="expertise-icon">&#9651;</span>
-          <h3>Blockchain &amp; Web3</h3>
-          <p>Built supply chain transparency platforms, led blockchain education programs, and served as SDG Working Group Lead for the Government Blockchain Association.</p>
-        </div>
-        <div class="expertise-card fade-in">
-          <span class="expertise-icon">&#9675;</span>
-          <h3>Strategic Foresight</h3>
-          <p>Professional Futurist (APF). Designed scenario planning programs for government leaders in Madagascar, North Africa, and Latin America.</p>
-        </div>
-        <div class="expertise-card fade-in">
-          <span class="expertise-icon">&#9633;</span>
-          <h3>Executive Education</h3>
-          <p>Taught 800+ students at an AACSB/AMBA-accredited institution. Delivered leadership programs for UNDP senior officials and corporate executives across four languages.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PUBLICATIONS -->
-  <section class="section" id="publications">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">Publications &amp; Reports</div>
-        <h2 class="section-title">Selected Work</h2>
-        <div class="section-divider"></div>
-      </div>
+  <header class="hero" id="top">
+    <div class="wrap hero-grid">
       <div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2026</span>
-          <div>
-            <div class="pub-title">Operationalizing AI Governance in Multilateral Development Programs</div>
-            <div class="pub-venue">White Paper (v1.1) — Peter Edmund Johnson, with editorial contributions from practitioners across AI governance and development finance</div>
-            <span class="pub-badge">paper</span>
-          </div>
-        </div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2026</span>
-          <div>
-            <div class="pub-title">Organizational Money: How DAOs Create Hybrid Governance-Monetary Systems</div>
-            <div class="pub-venue">In The Future of Money — Springer Nature, London (Forthcoming)</div>
-            <span class="pub-badge">chapter</span>
-          </div>
-        </div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2024</span>
-          <div>
-            <div class="pub-title">Madagascar 2044: A Visionary Model for Governance</div>
-            <div class="pub-venue">ISS African Futures &amp; AUDA-NEPAD</div>
-            <span class="pub-badge">paper</span>
-          </div>
-        </div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2024</span>
-          <div>
-            <div class="pub-title">What's Europe's 'Ace' for Developing Future Tech Leaders?</div>
-            <div class="pub-venue">Centre for European Perspective</div>
-            <span class="pub-badge">paper</span>
-          </div>
-        </div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2023</span>
-          <div>
-            <div class="pub-title">Digital Ecosystem Country Assessment — El Salvador</div>
-            <div class="pub-venue">USAID Digital Frontiers / DAI</div>
-            <span class="pub-badge">report</span>
-          </div>
-        </div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2022</span>
-          <div>
-            <div class="pub-title">EU PSD2 as Catalyst for FinTech and MSME Access to Finance</div>
-            <div class="pub-venue">European Union Neighbors South / GOPA</div>
-            <span class="pub-badge">report</span>
-          </div>
-        </div>
-        <div class="pub-item fade-in">
-          <span class="pub-year">2020</span>
-          <div>
-            <div class="pub-title">Blockchain and Philanthropy</div>
-            <div class="pub-venue">Global Philanthropy Tracker — Indiana University</div>
-            <span class="pub-badge">chapter</span>
-          </div>
+        <div class="eyebrow">Governance · AI · Digital Economy · Foresight</div>
+        <h1>Designing institutions for an <em>uncertain future.</em></h1>
+        <p>I am a practitioner-scholar, digital economist, former U.S. diplomat and strategic foresight advisor working at the intersection of artificial intelligence, decentralized governance, financial institutions and institutional transformation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#research">Explore the research</a>
+          <a class="button secondary" href="#contact">Discuss a collaboration</a>
         </div>
       </div>
+      <aside class="hero-note">
+        <blockquote>Technology does not determine governance outcomes. Institutional design does.</blockquote>
+        <p>Current doctoral research compares financial cooperatives and decentralized autonomous organizations to understand how democratic institutions distribute the cost of trust, participation and risk.</p>
+      </aside>
     </div>
-  </section>
+  </header>
 
-  <!-- SPEAKING -->
-  <section class="section" id="speaking" style="background: #F5F2EB;">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">Speaking &amp; Media</div>
-        <h2 class="section-title">Platforms &amp; Engagements</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="speaking-grid">
-        <div class="speaking-card fade-in">
-          <h4>Al Jazeera Arabic</h4>
-          <p>Expert commentator on digital innovation, platform economics, and emerging technology policy (2020, 2021, 2023)</p>
+  <main>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">About</div><h2>Scholarship shaped by practice.</h2></div>
+          <p>My work connects academic research with the institutional realities faced by governments, financial systems, international organizations, firms and emerging digital communities.</p>
         </div>
-        <div class="speaking-card fade-in">
-          <h4>YPO Impact in Action Podcast</h4>
-          <p>Host — conversations with global leaders on social impact, technology, and entrepreneurship</p>
-        </div>
-        <div class="speaking-card fade-in">
-          <h4>Humboldt-Universität zu Berlin</h4>
-          <p>Visiting Instructor — Strategic Foresight and Public Sector Leadership courses</p>
-        </div>
-        <div class="speaking-card fade-in">
-          <h4>Bosch Alumni Network</h4>
-          <p>Instructor, 'Futurism and Forecasting for Leaders' — participants from 25+ countries (2024)</p>
-        </div>
-        <div class="speaking-card fade-in">
-          <h4>Global Diplomacy Lab</h4>
-          <p>Fellow (2023) — blockchain, DAOs, and strategic foresight in public policy</p>
-        </div>
-        <div class="speaking-card fade-in">
-          <h4>Multiple International Universities</h4>
-          <p>Guest lectures at Estonian Business School, Francisco Gavidia University, University of El Salvador, and others</p>
+        <div class="about-grid">
+          <div>
+            <p>Across more than fifteen years, I have worked in diplomacy, international development, finance, higher education and entrepreneurship. I translate emerging technological change into governance choices that leaders can understand and act upon.</p>
+            <p>I am pursuing a PhD in Business, Innovation and Knowledge Management at the University of the Basque Country. My research examines democratic governance at scale, with particular attention to DAOs, financial cooperatives, institutional money and the future of AI-enabled organizations.</p>
+          </div>
+          <div class="fact-grid">
+            <div class="fact"><strong>40+</strong><span>countries of professional engagement</span></div>
+            <div class="fact"><strong>800+</strong><span>university students taught and mentored</span></div>
+            <div class="fact"><strong>$2B+</strong><span>mobilized through a 72-country coalition</span></div>
+            <div class="fact"><strong>5</strong><span>intersecting fields of current inquiry</span></div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ADVISORY -->
-  <section class="section advisory-section" id="advisory">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">Consulting &amp; Advisory</div>
-        <h2 class="section-title">Strategic Advisory Practice</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="adv-text fade-in d1">
-        <p>
-          Through The Ayadee Foundation and Ayadee Holding Corp., I advise governments, multilateral
-          institutions, and private sector organizations on integrating emerging technologies into national
-          strategies and development programs. Engagements range from short-term diagnostic assessments
-          to multi-year institutional transformation initiatives.
-        </p>
-        <p>
-          I bring particular depth in contexts where technology adoption intersects with governance reform,
-          regulatory design, and inclusive economic development. My advisory practice spans project design,
-          stakeholder facilitation, policy drafting, and executive training.
-        </p>
-      </div>
-      <div class="adv-domains fade-in d2">
-        <span class="adv-domain">AI Strategy &amp; Governance</span>
-        <span class="adv-domain">Digital Economy Assessments</span>
-        <span class="adv-domain">Open Banking &amp; FinTech Policy</span>
-        <span class="adv-domain">Blockchain &amp; Supply Chain</span>
-        <span class="adv-domain">Executive Leadership Programs</span>
-        <span class="adv-domain">Strategic Foresight &amp; Scenario Planning</span>
-      </div>
-      <div class="adv-clients fade-in d3">
-        <h4>Select Institutional Clients &amp; Partners</h4>
-        <div class="adv-client-grid">
-          <span>UNDP</span><span>European Commission</span><span>USAID</span><span>FAO</span>
-          <span>DAI</span><span>Stantec</span><span>GOPA</span><span>World Bank</span>
-          <span>African Development Bank</span><span>UNITAR</span>
+    <section class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Research domains</div><h2>One question, several institutional frontiers.</h2></div>
+          <p>How can societies build institutions that remain legitimate, adaptive and resilient when technology changes faster than governance?</p>
+        </div>
+        <div class="themes">
+          <article class="theme"><div class="num">01</div><h3>AI governance</h3><p>Institutional frameworks for responsible AI adoption, oversight, knowledge systems and agentic organizations.</p></article>
+          <article class="theme"><div class="num">02</div><h3>DAOs</h3><p>Voting, delegation, token concentration, organizational money and the institutional limits of code-based governance.</p></article>
+          <article class="theme"><div class="num">03</div><h3>Cooperatives</h3><p>Member participation, federated structures, mutual liability and democratic control in financial institutions.</p></article>
+          <article class="theme"><div class="num">04</div><h3>Future of money</h3><p>How organizations create monetary systems that combine governance rights, incentives, liquidity and institutional identity.</p></article>
+          <article class="theme"><div class="num">05</div><h3>Strategic foresight</h3><p>Scenario development and institutional design for governments, boards and organizations navigating structural uncertainty.</p></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ACADEMIC -->
-  <section class="section" id="academic">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">Academic Profile</div>
-        <h2 class="section-title">Research &amp; Teaching</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="academic-grid">
-        <div class="academic-col fade-in d1">
-          <h4>Education</h4>
-          <div class="academic-item">
-            <h5>PhD, Business, Innovation &amp; Knowledge Management</h5>
-            <p>University of the Basque Country (Remote)</p>
-            <p class="meta">Research: DAOs, governance transformation, decentralized business models</p>
-          </div>
-          <div class="academic-item">
-            <h5>MA, International Relations &amp; Economics</h5>
-            <p>Johns Hopkins University SAIS — Washington, DC &amp; Bologna</p>
-            <p class="meta">Emerging Markets, International Finance, Latin American Studies</p>
-          </div>
-          <div class="academic-item">
-            <h5>BA, Economics &amp; International Relations</h5>
-            <p>SUNY Geneseo — New York's Public Honors College</p>
-            <p class="meta">Minor: Business Administration</p>
-          </div>
-          <div class="academic-item">
-            <h5>Executive Education</h5>
-            <p>Generative AI Specialization — Vanderbilt University (2025)</p>
-            <p>Digital Governance — Hertie School, Berlin (2019)</p>
-            <p>Multi-AI Agent Systems — DeepLearning.AI (2025)</p>
-          </div>
+    <section id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Current research</div><h2>Democratic governance at scale.</h2></div>
+          <p>A comparative institutional analysis of financial cooperatives and decentralized autonomous organizations.</p>
         </div>
-        <div class="academic-col fade-in d2">
-          <h4>Teaching Experience</h4>
-          <div class="academic-item">
-            <h5>Adjunct Professor, Entrepreneurship &amp; Innovation</h5>
-            <p>Mediterranean School of Business (AACSB &amp; AMBA accredited), 2020–2024</p>
-            <p class="meta">Four-year appointment · 800+ students · Nominated Best Professor 2021 · Trained entrepreneurship faculty across North Africa</p>
+        <article class="research-feature">
+          <div>
+            <div class="eyebrow">Doctoral research</div>
+            <h3>The governance-risk premium</h3>
+            <p>The project compares how two democratic organizational families distribute the cost of trust. Cooperatives incur recurring costs through member education, deliberation and participation infrastructure. DAOs appear to concentrate governance costs in lower participation, concentrated voting power and occasional severe failures.</p>
+            <p>The central proposition is not that one form is inherently superior, but that governance outcomes emerge from institutional architecture rather than technological substrate alone.</p>
           </div>
-          <div class="academic-item">
-            <h5>DHL GoTrade Faculty Fellow</h5>
-            <p>Global Business School Network (GBSN), 2025–2026</p>
-          </div>
-          <div class="academic-item">
-            <h5>Investor Expert, African Business Concept Challenge 2026</h5>
-            <p>Global Business School Network (GBSN), 2026</p>
-          </div>
-          <div class="academic-item">
-            <h5>Leadership for Public Sector Executives</h5>
-            <p>UNDP Madagascar, 2024 — Delivered in French</p>
-            <p class="meta">Strategic leadership, change management, institutional planning</p>
-          </div>
-          <div class="academic-item">
-            <h5>Futurism and Forecasting for Leaders</h5>
-            <p>Bosch Alumni Network, 2024 — 25+ countries represented</p>
-          </div>
-          <div class="academic-item">
-            <h5>Blockchain Program Creator &amp; Instructor</h5>
-            <p>Monica Herrera School of Communications, El Salvador, 2022</p>
-            <p class="meta">Spanish-language executive education on Web3</p>
-          </div>
-          <div class="academic-item">
-            <h5>Visiting Instructor, Strategic Foresight &amp; Public Sector Leadership</h5>
-            <p>Humboldt-Universität zu Berlin</p>
-          </div>
-          <div class="academic-item">
-            <h5>Guest Lecturer</h5>
-            <p>Estonian Business School, Francisco Gavidia University, and others</p>
-          </div>
+          <aside>
+            <strong>Anchor cases</strong><p>SICOOB UniMais Mantiqueira and MakerDAO/Sky.</p>
+            <strong>Extension cases</strong><p>OP and POP Bank Groups, Rabobank, Mondragon finance, Aave, Compound and Uniswap.</p>
+            <strong>Methods</strong><p>Interviews, institutional documents, supervisory data, financial stability indicators, on-chain voting histories and governance-forum analysis.</p>
+          </aside>
+        </article>
+        <div class="cards">
+          <article class="card">
+            <div class="status">Working paper · 2026</div>
+            <h3>Ratification Democracy at Scale</h3>
+            <p>Evidence from a Brazilian financial cooperative on digital assemblies, member participation, bounded delegation and the ambiguity between effective alignment and weak contestation.</p>
+            <footer>SICOOB UniMais Mantiqueira · Brazilian fieldwork</footer>
+          </article>
+          <article class="card">
+            <div class="status">Planned paper · Spring 2027</div>
+            <h3>Forking the Cooperative</h3>
+            <p>The OP and POP separations in Finnish cooperative banking as an institutional analogue to blockchain hard forks, focusing on joint liability, institutional exit and capital strength.</p>
+            <footer>Finnish cooperative banking · OP/POP comparison</footer>
+          </article>
+          <article class="card">
+            <div class="status">Submitted · In review</div>
+            <h3>Organizational Money</h3>
+            <p>How Compound, Uniswap and MakerDAO create hybrid governance-monetary systems in which money simultaneously allocates value, coordinates participation and distributes authority.</p>
+            <footer>Book chapter · The Future of Money · Springer Nature</footer>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section class="section contact-section" id="contact">
-    <div class="section-inner">
-      <div class="fade-in">
-        <div class="section-label">Get in Touch</div>
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="section-divider"></div>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-info fade-in d1">
-          <p>
-            I welcome inquiries related to consulting engagements, speaking invitations,
-            academic collaborations, and institutional partnerships.
-          </p>
-          <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#26564352435466475f47424343084f49"><span class="__cf_email__" data-cfemail="bcccd9c8d9cefcddc5ddd8d9d992d5d3">[email&#160;protected]</span></a></p>
-          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/peterjohnson" target="_blank" rel="noopener noreferrer">linkedin.com/in/peterjohnson</a></p>
-          <p style="margin-top: 24px; font-size: 0.88rem; color: #6B7280;">
-            Based in the United States, France, and Germany. Open to engagements worldwide.
-          </p>
+    <section class="alt" id="agenda">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Research agenda</div><h2>Work underway and ahead.</h2></div>
+          <p>The research program is sequenced to preserve field evidence first, then build the comparative on-chain and financial datasets needed for the broader institutional argument.</p>
         </div>
-        <div class="contact-form fade-in d2">
-          <form action="https://formspree.io/f/meerbvzp" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Email Address" required />
-            <input type="text" name="subject" placeholder="Subject" />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-          </form>
+        <div class="timeline">
+          <article class="timeline-item"><time>Sep–Dec 2026</time><div><h3>Brazilian cooperative governance</h3><p>Complete the Mantiqueira empirical paper and build the financial stability panel for Brazilian and Finnish cooperative cases.</p></div></article>
+          <article class="timeline-item"><time>Jan–Apr 2027</time><div><h3>DAO governance and Finnish fieldwork</h3><p>Assemble token concentration, voting and forum-deliberation data while preparing interviews and archival research on the OP and POP banking groups.</p></div></article>
+          <article class="timeline-item"><time>Spring 2027</time><div><h3>Forking the Cooperative</h3><p>Develop the planned paper on institutional exit, joint liability, the price of independence and the role of regulatory cushioning in organizational forks.</p></div></article>
+          <article class="timeline-item"><time>May–Aug 2027</time><div><h3>Comparative synthesis</h3><p>Integrate cooperative and DAO evidence through the governance-risk premium, with further analysis of Rabobank and Mondragon financial institutions.</p></div></article>
+          <article class="timeline-item"><time>Late 2027</time><div><h3>AI-agent organizations</h3><p>Assess whether AI-agent organizations constitute a third institutional paradigm and how lessons from cooperatives and DAOs might inform their governance.</p></div></article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    &copy; 2026 Peter Edmund Johnson. All rights reserved.
+    <section id="publications">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected publications</div><h2>Research across governance and digital transformation.</h2></div>
+          <p>Selected academic and practitioner work connecting technological change, institutional design and development strategy.</p>
+        </div>
+        <div class="pub-list">
+          <article class="pub"><time>2026</time><div><h3>Organizational Money: How DAOs Create Hybrid Governance-Monetary Systems</h3><p>Forthcoming book chapter in <em>The Future of Money</em>, Springer Nature.</p></div><span class="tag">In review</span></article>
+          <article class="pub"><time>2024</time><div><h3>Madagascar 2044: A Visionary Model for Governance</h3><p>Institute for Security Studies and AUDA-NEPAD.</p></div><span class="tag">Foresight</span></article>
+          <article class="pub"><time>2023</time><div><h3>Digital Ecosystem Country Assessment — El Salvador</h3><p>USAID Digital Frontiers / DAI.</p></div><span class="tag">Digital economy</span></article>
+          <article class="pub"><time>2022</time><div><h3>EU PSD2 as Catalyst for FinTech and MSME Access to Finance</h3><p>EU Neighbours South / GOPA.</p></div><span class="tag">FinTech</span></article>
+          <article class="pub"><time>2020</time><div><h3>Blockchain and Philanthropy</h3><p>Global Philanthropy Tracker, Indiana University.</p></div><span class="tag">Blockchain</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Professional work</div><h2>From ideas to institutional decisions.</h2></div>
+          <p>I advise organizations operating where technological possibility, political economy and institutional capacity meet.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-item"><h3>AI strategy and governance</h3><p>Responsible AI frameworks, institutional workflows, knowledge management, change leadership and executive decision systems.</p></article>
+          <article class="work-item"><h3>Digital economy and finance</h3><p>Digital ecosystem assessments, FinTech, open banking, digital identity, financial inclusion and emerging-market strategy.</p></article>
+          <article class="work-item"><h3>Strategic foresight</h3><p>Scenarios, institutional futures, geopolitical risk and long-range strategy for boards, governments and international organizations.</p></article>
+          <article class="work-item"><h3>Governance design</h3><p>Institutional architecture for democratic participation, delegation, accountability and cross-organizational coordination.</p></article>
+          <article class="work-item"><h3>Executive education</h3><p>Teaching and facilitated learning on AI, entrepreneurship, innovation, governance and technological transformation.</p></article>
+          <article class="work-item"><h3>Research partnerships</h3><p>Applied research, comparative case studies, interviews, data synthesis and translation between academic and practitioner communities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div><div class="eyebrow" style="color:#18312d">Contact</div><h2>Let’s build institutions fit for the future.</h2><p>Available for research collaborations, advisory work, executive education, speaking and institutional strategy engagements.</p></div>
+        <div class="contact-box"><p><strong>Email</strong><br><a href="mailto:peter@ayadee.io">peter@ayadee.io</a></p><p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/peterjohnson" target="_blank" rel="noopener">linkedin.com/in/peterjohnson</a></p><p><strong>Affiliation</strong><br>University of the Basque Country (UPV/EHU)</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><span>© <span id="year"></span> Peter Edmund Johnson</span><span>Research · Advisory · Foresight</span></div>
   </footer>
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Scroll-based nav highlighting and shadow
-    function scrollTo(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-      document.querySelector('.nav-links').classList.remove('open');
-    }
-
-    window.addEventListener('scroll', function() {
-      var navbar = document.getElementById('navbar');
-      if (window.scrollY > 60) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-
-    // Fade-in on scroll
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersect
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
