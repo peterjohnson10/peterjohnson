@@ -57,8 +57,19 @@
         ],
         "sameAs": [
           "https://www.linkedin.com/in/peterjohnson",
-          "https://lifeboat.com/ex/bios.peter.johnson"
+          "https://lifeboat.com/ex/bios.peter.johnson",
+          "https://pjohnson.substack.com"
         ]
+      },
+      {
+        "@type": "Periodical",
+        "@id": "https://pjohnson.substack.com/#periodical",
+        "name": "Long Field Notes",
+        "url": "https://pjohnson.substack.com",
+        "description": "A newsletter by Peter Edmund Johnson in two tracks: Signals & Scenarios (strategic foresight) and The Governance Ledger (digital economies, DAOs, cooperative finance and technology governance).",
+        "author": { "@id": "https://peterjohnson.us/#person" },
+        "publisher": { "@type": "Organization", "name": "Blue Shift Labs by Ayadee" },
+        "inLanguage": "en"
       },
       {
         "@type": "WebSite",
@@ -289,6 +300,20 @@
     .timeline-item time { font-weight:700; color:var(--forest); }
     .timeline-item h3 { margin-bottom: 8px; font-size: 1.45rem; }
     .timeline-item p { margin:0; color:var(--ink-soft); }
+    .notes { background: var(--forest); color: var(--paper); }
+    .notes .section-head h2 { color: var(--paper); }
+    .notes .section-head p { color: #cfd9d6; }
+    .notes .eyebrow { color: var(--amber); }
+    .notes-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 36px; align-items: start; }
+    .notes-banner img { width: 100%; height: auto; display: block; border: 1px solid rgba(244,239,231,.18); border-radius: 14px; }
+    .notes-tracks { display: grid; gap: 1px; background: rgba(244,239,231,.18); border: 1px solid rgba(244,239,231,.18); }
+    .track { background: var(--forest-2); padding: 24px 26px; }
+    .track h3 { font-family: Georgia, serif; font-size: 1.3rem; margin: 6px 0 8px; color: var(--paper); }
+    .track p { margin: 0; color: #cfd9d6; font-size: .94rem; }
+    .track.cadence p { margin-bottom: 16px; }
+    .track strong { color: var(--amber-soft); }
+    .site-footer a { color: inherit; }
+    @media (max-width: 900px) { .notes-grid { grid-template-columns: 1fr; } }
     .pub-table { width:100%; border-collapse:collapse; border-top:1px solid var(--line); font-size:.95rem; }
     .pub-table th { text-align:left; font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); padding:14px 12px 10px 0; border-bottom:1px solid var(--line); }
     .pub-table td { padding:18px 12px 18px 0; border-bottom:1px solid var(--line); vertical-align:top; }
@@ -340,7 +365,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top">Peter Edmund <span>Johnson</span></a>
       <div class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#agenda">Agenda</a><a href="#publications">Publications</a><a href="#work">Work</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#research">Research</a><a href="#agenda">Agenda</a><a href="#notes">Long Field Notes</a><a href="#publications">Publications</a><a href="#work">Work</a><a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -354,7 +379,7 @@
         <p>I am a practitioner-scholar, digital economist, former U.S. diplomat and strategic foresight advisor working at the intersection of artificial intelligence, decentralized governance, financial institutions and institutional transformation.</p>
         <div class="hero-actions">
           <a class="button primary" href="#research">Explore the research</a>
-          <a class="button secondary" href="#contact">Discuss a collaboration</a>
+          <a class="button secondary" href="#notes">Read Long Field Notes</a>
         </div>
       </div>
       <aside class="hero-note">
@@ -373,7 +398,7 @@
         </div>
         <div class="about-grid">
           <div>
-            <p>Across more than fifteen years, I have worked in diplomacy, international development, finance, higher education and entrepreneurship. I translate emerging technological change into governance choices that leaders can understand and act upon.</p>
+            <p>I write and advise from two decades between foresight and the ground: strategist and former U.S. diplomat, doctoral researcher on how decentralized and mutual institutions govern money, and builder of digital systems across three continents. I translate emerging technological change into governance choices that leaders can understand and act upon.</p>
             <p>I am pursuing a PhD in Business, Innovation and Knowledge Management at the University of the Basque Country. My research examines democratic governance at scale, with particular attention to DAOs, financial cooperatives, institutional money and the future of AI-enabled organizations.</p>
           </div>
           <div class="fact-grid">
@@ -460,6 +485,23 @@
       </div>
     </section>
 
+    <section class="notes" id="notes">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Newsletter · Blue Shift Labs by Ayadee</div><h2>What is Long Field Notes?</h2></div>
+          <p>Long Field Notes is my newsletter on Substack: one column, two tracks, written from two decades between foresight and the ground.</p>
+        </div>
+        <div class="notes-grid">
+          <a class="notes-banner" href="https://pjohnson.substack.com" target="_blank" rel="noopener"><img src="/long-field-notes-banner.png" width="1600" height="900" alt="Long Field Notes masthead: a field notebook page with a rising sun on the horizon line" loading="lazy"></a>
+          <div class="notes-tracks">
+            <article class="track"><div class="eyebrow">Track one</div><h3>Signals &amp; Scenarios</h3><p>Foresight: noticing weak signals early, building scenarios instead of forecasts, and thinking about legacy on a horizon longer than a planning cycle.</p></article>
+            <article class="track"><div class="eyebrow">Track two</div><h3>The Governance Ledger</h3><p>Ground work: digital economies, DAOs, cooperative finance and technology governance, drawn from systems I have built and countries I have analyzed.</p></article>
+            <article class="track cadence"><div class="eyebrow">Cadence</div><p><strong>Tuesday</strong> foresight · <strong>Thursday</strong> governance · <strong>Friday</strong> a personal note.</p><a class="button primary" href="https://pjohnson.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="publications">
       <div class="wrap">
         <div class="section-head">
@@ -501,14 +543,14 @@
 
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
-        <div><div class="eyebrow" style="color:#18312d">Contact</div><h2>How to work with Peter Johnson</h2><p>Let’s build institutions fit for the future. Available for research collaborations, advisory work, executive education, speaking and institutional strategy engagements.</p></div>
+        <div><div class="eyebrow" style="color:#18312d">Contact</div><h2>How to work with Peter Johnson</h2><p>Let’s build institutions fit for the future. Limited availability in Q1 2027 for research collaborations, advisory work, executive education, speaking and institutional strategy engagements.</p></div>
         <div class="contact-box"><p><strong>Email</strong><br><a href="mailto:peter@ayadee.io">peter@ayadee.io</a></p><p><strong>LinkedIn</strong><br><a href="https://www.linkedin.com/in/peterjohnson" target="_blank" rel="noopener">linkedin.com/in/peterjohnson</a></p><p><strong>Affiliation</strong><br>University of the Basque Country (UPV/EHU)</p></div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap"><span>© <span id="year"></span> Peter Edmund Johnson</span><span>Research · Advisory · Foresight</span></div>
+    <div class="wrap"><span>© <span id="year"></span> Peter Edmund Johnson</span><span>Research · Advisory · <a href="https://pjohnson.substack.com" target="_blank" rel="noopener">Long Field Notes</a></span></div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>

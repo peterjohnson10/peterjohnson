@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" role="img" aria-label="Long Field Notes — a Friday newsletter by Peter Edmund Johnson, Blue Shift Labs by Ayadee">
+  <defs>
+    <radialGradient id="glow" cx="72%" cy="40%" r="70%">
+      <stop offset="0" stop-color="#1c4a42"/>
+      <stop offset="1" stop-color="#0f2f2b"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <!-- notebook page, right -->
+  <g transform="translate(1080 150)">
+    <rect x="0" y="0" width="440" height="600" rx="20" fill="#f4efe7"/>
+    <rect x="0" y="0" width="440" height="600" rx="20" fill="none" stroke="#e7a755" stroke-width="5"/>
+    <line x1="68" y1="0" x2="68" y2="600" stroke="#e7a755" stroke-width="3"/>
+    <path d="M100 160 A56 56 0 0 1 212 160" fill="#e7a755"/>
+    <line x1="94" y1="160" x2="396" y2="160" stroke="#0f2f2b" stroke-width="8" stroke-linecap="round"/>
+    <line x1="94" y1="246" x2="396" y2="246" stroke="#0f2f2b" stroke-width="6" stroke-linecap="round"/>
+    <line x1="94" y1="326" x2="366" y2="326" stroke="#0f2f2b" stroke-width="6" stroke-linecap="round" opacity=".8"/>
+    <line x1="94" y1="406" x2="332" y2="406" stroke="#0f2f2b" stroke-width="6" stroke-linecap="round" opacity=".6"/>
+    <line x1="94" y1="486" x2="290" y2="486" stroke="#0f2f2b" stroke-width="6" stroke-linecap="round" opacity=".4"/>
+  </g>
+  <!-- text block, left -->
+  <text x="140" y="300" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="7" fill="#e7a755">BLUE SHIFT LABS BY AYADEE</text>
+  <text x="140" y="430" font-family="Georgia, 'Times New Roman', serif" font-size="128" fill="#f4efe7">Long Field</text>
+  <text x="140" y="560" font-family="Georgia, 'Times New Roman', serif" font-size="128" fill="#f4efe7">Notes</text>
+  <text x="140" y="650" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="38" fill="#f2c98e">Two decades between foresight and the ground.</text>
+  <text x="140" y="722" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" fill="#cfd9d6">Signals &amp; Scenarios  ·  The Governance Ledger</text>
+  <text x="140" y="764" font-family="Inter, Helvetica, Arial, sans-serif" font-size="26" fill="#cfd9d6">A Friday note from Peter Edmund Johnson</text>
+</svg>
