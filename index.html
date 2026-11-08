@@ -300,20 +300,17 @@
     .timeline-item time { font-weight:700; color:var(--forest); }
     .timeline-item h3 { margin-bottom: 8px; font-size: 1.45rem; }
     .timeline-item p { margin:0; color:var(--ink-soft); }
-    .notes { background: var(--forest); color: var(--paper); }
-    .notes .section-head h2 { color: var(--paper); }
-    .notes .section-head p { color: #cfd9d6; }
-    .notes .eyebrow { color: var(--amber); }
-    .notes-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 36px; align-items: start; }
-    .notes-banner img { width: 100%; height: auto; display: block; border: 1px solid rgba(244,239,231,.18); border-radius: 14px; }
-    .notes-tracks { display: grid; gap: 1px; background: rgba(244,239,231,.18); border: 1px solid rgba(244,239,231,.18); }
-    .track { background: var(--forest-2); padding: 24px 26px; }
-    .track h3 { font-family: Georgia, serif; font-size: 1.3rem; margin: 6px 0 8px; color: var(--paper); }
-    .track p { margin: 0; color: #cfd9d6; font-size: .94rem; }
-    .track.cadence p { margin-bottom: 16px; }
-    .track strong { color: var(--amber-soft); }
+    .writing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .writing-item { background: var(--paper); padding: 28px 26px; display: grid; grid-template-columns: 56px 1fr; gap: 18px; text-decoration: none; color: inherit; align-items: start; }
+    a.writing-item:hover { background: var(--white); }
+    .writing-item img { width: 56px; height: 56px; border-radius: 12px; }
+    .writing-item .glyph { width: 56px; height: 56px; border-radius: 12px; background: var(--forest); color: var(--amber); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: .95rem; letter-spacing: .02em; }
+    .writing-item h3 { font-family: Georgia, serif; font-size: 1.25rem; margin: 0 0 8px; }
+    .writing-item p { margin: 0 0 12px; color: var(--ink-soft); font-size: .93rem; }
+    .writing-item .link { font-size: .85rem; font-weight: 700; color: var(--forest-2); }
+    .writing-item .link.muted { color: var(--ink-soft); font-weight: 400; }
+    @media (max-width: 900px) { .writing-grid { grid-template-columns: 1fr; } }
     .site-footer a { color: inherit; }
-    @media (max-width: 900px) { .notes-grid { grid-template-columns: 1fr; } }
     .pub-table { width:100%; border-collapse:collapse; border-top:1px solid var(--line); font-size:.95rem; }
     .pub-table th { text-align:left; font-size:.76rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); padding:14px 12px 10px 0; border-bottom:1px solid var(--line); }
     .pub-table td { padding:18px 12px 18px 0; border-bottom:1px solid var(--line); vertical-align:top; }
@@ -365,7 +362,7 @@
     <div class="wrap nav-inner">
       <a class="brand" href="#top">Peter Edmund <span>Johnson</span></a>
       <div class="nav-links" aria-label="Primary navigation">
-        <a href="#about">About</a><a href="#research">Research</a><a href="#agenda">Agenda</a><a href="#notes">Long Field Notes</a><a href="#publications">Publications</a><a href="#work">Work</a><a href="#contact">Contact</a>
+        <a href="#about">About</a><a href="#research">Research</a><a href="#agenda">Agenda</a><a href="#writing">Writing</a><a href="#publications">Publications</a><a href="#work">Work</a><a href="#contact">Contact</a>
       </div>
     </div>
   </nav>
@@ -379,7 +376,7 @@
         <p>I am a practitioner-scholar, digital economist, former U.S. diplomat and strategic foresight advisor working at the intersection of artificial intelligence, decentralized governance, financial institutions and institutional transformation.</p>
         <div class="hero-actions">
           <a class="button primary" href="#research">Explore the research</a>
-          <a class="button secondary" href="#notes">Read Long Field Notes</a>
+          <a class="button secondary" href="#contact">Discuss a collaboration</a>
         </div>
       </div>
       <aside class="hero-note">
@@ -485,19 +482,16 @@
       </div>
     </section>
 
-    <section class="notes" id="notes">
+    <section id="writing">
       <div class="wrap">
         <div class="section-head">
-          <div><div class="eyebrow">Newsletter · Blue Shift Labs by Ayadee</div><h2>What is Long Field Notes?</h2></div>
-          <p>Long Field Notes is my newsletter on Substack: one column, two tracks, written from two decades between foresight and the ground.</p>
+          <div><div class="eyebrow">Writing</div><h2>Where does Peter Johnson publish?</h2></div>
+          <p>Shorter and more frequent than the research: a newsletter, a column and the running commentary in between.</p>
         </div>
-        <div class="notes-grid">
-          <a class="notes-banner" href="https://pjohnson.substack.com" target="_blank" rel="noopener"><img src="/long-field-notes-banner.png" width="1600" height="900" alt="Long Field Notes masthead: a field notebook page with a rising sun on the horizon line" loading="lazy"></a>
-          <div class="notes-tracks">
-            <article class="track"><div class="eyebrow">Track one</div><h3>Signals &amp; Scenarios</h3><p>Foresight: noticing weak signals early, building scenarios instead of forecasts, and thinking about legacy on a horizon longer than a planning cycle.</p></article>
-            <article class="track"><div class="eyebrow">Track two</div><h3>The Governance Ledger</h3><p>Ground work: digital economies, DAOs, cooperative finance and technology governance, drawn from systems I have built and countries I have analyzed.</p></article>
-            <article class="track cadence"><div class="eyebrow">Cadence</div><p><strong>Tuesday</strong> foresight · <strong>Thursday</strong> governance · <strong>Friday</strong> a personal note.</p><a class="button primary" href="https://pjohnson.substack.com" target="_blank" rel="noopener">Subscribe on Substack</a></article>
-          </div>
+        <div class="writing-grid">
+          <a class="writing-item" href="https://pjohnson.substack.com" target="_blank" rel="noopener"><img src="/long-field-notes-mark.svg" width="56" height="56" alt=""><div><h3>Long Field Notes</h3><p>Friday newsletter on Substack, under the Blue Shift Labs by Ayadee masthead. Two tracks: Signals &amp; Scenarios on foresight, and The Governance Ledger on digital economies, DAOs and cooperative finance.</p><span class="link">pjohnson.substack.com →</span></div></a>
+          <article class="writing-item"><div class="glyph">A360</div><div><h3>Long Field Notes column at A360news</h3><p>The same two tracks in column form: weak signals and scenarios, and ground work from systems built and countries analyzed over two decades.</p><span class="link muted">A360news</span></div></article>
+          <a class="writing-item" href="https://www.linkedin.com/in/peterjohnson" target="_blank" rel="noopener"><div class="glyph">in</div><div><h3>LinkedIn</h3><p>Short posts between issues on AI governance, institutional design and the research as it develops.</p><span class="link">linkedin.com/in/peterjohnson →</span></div></a>
         </div>
       </div>
     </section>
@@ -550,7 +544,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="wrap"><span>© <span id="year"></span> Peter Edmund Johnson</span><span>Research · Advisory · <a href="https://pjohnson.substack.com" target="_blank" rel="noopener">Long Field Notes</a></span></div>
+    <div class="wrap"><span>© <span id="year"></span> Peter Edmund Johnson</span><span>Research · Advisory · Foresight · <a href="https://pjohnson.substack.com" target="_blank" rel="noopener">Long Field Notes</a></span></div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
